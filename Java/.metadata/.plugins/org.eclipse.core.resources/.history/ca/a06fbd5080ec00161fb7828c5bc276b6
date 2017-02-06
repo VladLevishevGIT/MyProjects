@@ -23,11 +23,15 @@ public class JSONReader {
 	}
 	
 	public JSONObject readJsonFromURL (String url) throws MalformedURLException, IOException, JSONException{
+		
 			InputStream is = new URL(url).openStream();
 		try{	
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			
 			String jsonText = readAll(br);
-			JSONObject json = new JSONObject(jsonText);		
+			
+			JSONObject json = new JSONObject(jsonText);
+			
 		return json;
 		} finally {
 			is.close();

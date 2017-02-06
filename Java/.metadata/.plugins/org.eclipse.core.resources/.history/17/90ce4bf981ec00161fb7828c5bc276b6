@@ -20,7 +20,7 @@ public class Test {
 		JSONObject json = jr.readJsonFromURL(url);
 		
 		System.out.println(json.toString());
-		System.out.println(json.getJSONArray("results").getJSONObject(0).getString("artistName"));
+		System.out.println(json.get("artistName"));
 	}
 
 }
