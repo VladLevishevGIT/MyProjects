@@ -1,0 +1,12 @@
+package core;
+
+import org.json.JSONObject;
+
+public class JSONReader {
+	
+	public static JSONObject readJsonFromURL (String url){
+		
+		return null;
+	}
+
+}

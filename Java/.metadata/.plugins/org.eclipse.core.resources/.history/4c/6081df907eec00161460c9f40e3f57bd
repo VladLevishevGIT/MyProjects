@@ -1,0 +1,47 @@
+package core;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class JSONReader {
+	
+	public static String readAll(Reader rd) throws IOException {
+		StringBuilder sb = new StringBuilder();
+		int cp;
+		while((cp=rd.read())!=-1){
+			sb.append((char) cp);
+		}
+		return sb.toString();
+	}
+	
+	public static JSONObject readJsonFromURL (String url) throws MalformedURLException, IOException, JSONException{
+		
+			InputStream is = new URL(url).openStream();
+			
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			
+			String jsonText = readAll(br);
+			
+			JSONObject json = new JSONObject(jsonText);
+			
+		return json;
+	}
+	
+	public static void main(String[] args) throws MalformedURLException, IOException, JSONException {
+		
+		String url = "https://itunes.apple.com/search?term=jack+johnson&limit=25";
+		JSONObject json = readJsonFromURL(url);
+		
+		System.out.println(json.toString());
+		
+	}
+
+}

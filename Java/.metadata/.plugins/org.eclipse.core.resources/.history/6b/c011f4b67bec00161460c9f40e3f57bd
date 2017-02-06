@@ -1,0 +1,15 @@
+package tests;
+
+import org.json.JSONObject;
+import core.JSONReader;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		String url = "https://itunes.apple.com/search?term=jack+johnson&limit=25";
+		JSONObject json = read
+		
+	}
+
+}
