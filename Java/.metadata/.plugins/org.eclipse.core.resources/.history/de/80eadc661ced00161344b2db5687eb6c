@@ -1,0 +1,10 @@
+package core;
+
+import java.util.ArrayList;
+
+public class ArtistChooser {
+	
+	ArrayList<String> artistsList = new ArrayList<String>;
+	
+
+}

@@ -1,6 +1,7 @@
 package tests;
 
 import core.JSONReader;
+import core.ArtistChooser;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -13,7 +14,9 @@ public class Test {
 
 	public static void main(String[] args) throws MalformedURLException, IOException, JSONException {
 		
-		String url = "https://itunes.apple.com/search?term=jack+johnson&limit=1";
+		ArtistChooser chooser = new ArtistChooser();
+		
+		String url = chooser.artistRandomChooser();
 		
 		JSONReader jr = new JSONReader();
 		

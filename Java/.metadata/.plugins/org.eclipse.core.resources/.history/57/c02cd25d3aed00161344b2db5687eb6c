@@ -1,0 +1,31 @@
+package core;
+
+import java.util.ArrayList;
+
+public class ArtistChooser {
+	
+	Double num;
+	
+	public static ArrayList<String> artistsList = new ArrayList<String>();
+	static {
+		artistsList.add("Madonna");
+		artistsList.add("Rihanna");
+		artistsList.add("Cia");
+		artistsList.add("Adele");
+		artistsList.add("Beyonce");
+	}
+
+	public String artistRandomChooser (){
+		String URL;
+		num = Math.random();
+		String artist = artistsList.get((int)Math.random()*5);
+		URL = "https://itunes.apple.com/search?term="+artist+"&limit=1";
+		return URL;
+	}
+	
+	public static void main(String[] args) {
+		ArtistChooser chooser = new ArtistChooser();
+		System.out.println(chooser.num);
+	}
+
+}
