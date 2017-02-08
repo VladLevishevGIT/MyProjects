@@ -6,10 +6,11 @@
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.Reader"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-<fullyQualifiedTypeName name="core.JSONReader"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.ARETURN"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
-<fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="core.ArtistChooser"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="core.JSONReader"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="core.QuizListCreator"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
 </qualifiedTypeNameHistroy>

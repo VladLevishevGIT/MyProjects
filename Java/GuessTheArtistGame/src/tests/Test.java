@@ -1,20 +1,19 @@
 package tests;
 
-import core.JSONReader;
-import core.ArtistChooser;
+import core.*;
+
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 
 public class Test {
 
 	public static void main(String[] args) throws MalformedURLException, IOException, JSONException {
 		
-		ArtistChooser chooser = new ArtistChooser();
+		/*QuizListCreator chooser = new QuizListCreator();
 		
 		String url = chooser.artistRandomChooser();
 		
@@ -23,7 +22,10 @@ public class Test {
 		JSONObject json = jr.readJsonFromURL(url);
 		
 		System.out.println(json.toString());
-		System.out.println(json.getJSONArray("results").getJSONObject(0).getString("artistName"));
+		System.out.println(json.getJSONArray("results").getJSONObject(0).getString("artistName"));*/
+		
+		QuizListCreator qc = new QuizListCreator();
+		System.out.println(qc.JSONsongsCreator(qc.artistRandomChooser()).toString());
 	}
 
 }

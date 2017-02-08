@@ -1,0 +1,38 @@
+package core;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.ArrayList;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class QuizListCreator {
+	
+	public static ArrayList<String> artistsList = new ArrayList<String>();
+	static {
+		artistsList.add("Madonna");
+		artistsList.add("Rihanna");
+		artistsList.add("Sia");
+		artistsList.add("Adele");
+		artistsList.add("Beyonce");
+	}
+
+	public String artistRandomChooser (){
+		String URL;
+		String artist = artistsList.get((int)(Math.random()*5));
+		URL = "https://itunes.apple.com/search?term="+artist+"&limit=10";
+		return URL;
+	}
+	
+	public ArrayList<String> createListOfSongs (String URL) throws MalformedURLException, IOException, JSONException{
+		ArrayList<String> songsList = new ArrayList<>();
+		
+		JSONReader jr = new JSONReader();
+		JSONObject JSONsongs = jr.readJsonFromURL(URL);
+		
+		String firstSong = JSONsongs.getJSONArray("results").getJSONObject((int)(Math.random()*9)).getString("trackName");
+		return null;
+	}
+
+}
