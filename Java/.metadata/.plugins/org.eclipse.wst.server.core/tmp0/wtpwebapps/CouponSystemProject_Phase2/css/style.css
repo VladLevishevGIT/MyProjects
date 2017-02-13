@@ -1,0 +1,33 @@
+body {
+    background-color: #f8f8f8;
+}
+
+ #wrapper {
+    background-image: url(../img/AdminFacade_Main.jpg);
+    width: 100%;
+    margin-top: 155px!important; 
+    background-color:#04B173; 
+}
+
+.arrow {
+    float: right;
+}
+
+.fa.arrow:before {
+    content: "\f104";
+}
+
+.active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+@media(min-width:768px) {
+    .navbar-static-side {
+        z-index: 2;
+        position: absolute;
+        width: 250px;
+    }
+}
+
+
+

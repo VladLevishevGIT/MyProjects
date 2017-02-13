@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\MyProjects\Java\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\MyProjects\Java\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\GuessTheArtistQuizWeb" path="/GuessTheArtistQuizWeb" reloadable="true" source="org.eclipse.jst.jee.server:GuessTheArtistQuizWeb"/></Host>
+      <Context docBase="D:\MyProjects\Java\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\MyProjects\Java\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\GuessTheArtistQuizWeb" path="/GuessTheArtistQuizWeb" reloadable="true" source="org.eclipse.jst.jee.server:GuessTheArtistQuizWeb"/><Context docBase="D:\MyProjects\Java\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\CouponSystemProject_Phase2" path="/CouponSystemProject_Phase2" reloadable="true" source="org.eclipse.jst.jee.server:CouponSystemProject_Phase2"/></Host>
     </Engine>
   </Service>
 </Server>

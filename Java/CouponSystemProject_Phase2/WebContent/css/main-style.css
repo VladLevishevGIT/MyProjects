@@ -1,0 +1,201 @@
+/* side-menu section */
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: darkblue;
+}
+.navbar-top-links  .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: darkblue;
+}
+
+.nav > li > a {
+        background-image: url(../img/AdminFacade_Main.jpg);
+padding: 20px 15px;
+}
+
+#side-menu {
+        background-image: url(../img/AdminFacade_Main.jpg);
+}
+
+ #side-menu a {
+    background-image: url(../img/AdminFacade_Main.jpg);
+            color:#fff;
+           border-bottom: 3px solid white !important;
+           height: 55px;
+        }
+
+
+    #page-wrapper {
+        margin: 0 0 0 250px;
+        height: 520px; 
+        border-left:3px solid white; 
+    }
+
+    a.text-primary{
+        font-size:20px;
+    }
+
+    header {
+    background-image: url(../img/AdminFacade_Main.jpg);
+    background-position: center center;
+    border-bottom: 2px solid white !important;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+        header .intro-text .intro-lead-in {
+            font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-style: italic;
+            font-size: 22px;
+            line-height: 22px;
+            margin-bottom: 25px;
+        }
+
+        header .intro-text .intro-heading {
+            font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 50px;
+        }
+
+    #mainCreationDiv{
+        width:100%;
+        height:520px;
+        line-height:3em;
+        overflow:auto;
+        padding:5px;
+    }
+
+    .container{
+        width:100%;
+        height:520px;
+    }
+
+    section#CreateCompany .section-heading, section#UpdateCompany .section-heading, section#GetCompany .section-heading, section#GetAllCompanies .section-heading, section#RemoveCompany .section-heading {
+        color: #fff;
+    }
+
+    section#CreateCompany .form-group, section#UpdateCompany .form-group, section#GetCompany .form-group, section#GetAllCompanies .form-group, section#RemoveCompany .form-group{
+        margin-bottom: 25px;
+    }
+
+        section#CreateCompany .form-group input, section#UpdateCompany .form-group input, section#GetCompany .form-group input, section#GetAllCompanies .form-group input, section#RemoveCompany .form-group input {
+            padding: 20px;
+        }
+
+            section#CreateCompany .form-group input.form-control, section#UpdateCompany .form-group input.form-control, section#GetCompany .form-group input.form-control, section#GetAllCompanies .form-group input.form-control, section#RemoveCompany .form-group input.form-control  {
+                height: auto;
+            }
+
+            section#CreateCompany .form-group textarea.form-control, section#UpdateCompany .form-group textarea.form-control, section#GetCompany .form-group textarea.form-control, section#GetAllCompanies .form-group textarea.form-control, section#RemoveCompany .form-group textarea.form-control{
+                height: 236px;
+            }
+
+    section#CreateCompany .form-control:focus, section#UpdateCompany .form-control:focus, section#GetCompany .form-control:focus, section#GetAllCompanies .form-control:focus, section#RemoveCompany .form-control:focus {
+        border-color: #fed136;
+        box-shadow: none;
+    }
+
+    section#CreateCompany ::-webkit-input-placeholder, section#UpdateCompany ::-webkit-input-placeholder, section#GetCompany ::-webkit-input-placeholder, section#GetAllCompanies ::-webkit-input-placeholder, section#RemoveCompany ::-webkit-input-placeholder {
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #bbb;
+    }
+
+    section#CreateCompany :-moz-placeholder, section#UpdateCompany :-moz-placeholder, section#GetCompany :-moz-placeholder, section#GetAllCompanies :-moz-placeholder, section#RemoveCompany :-moz-placeholder{
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #bbb;
+    }
+
+    section#CreateCompany ::-moz-placeholder , section#UpdateCompany ::-moz-placeholder, section#GetCompany ::-moz-placeholder , section#GetAllCompanies ::-moz-placeholder, section#RemoveCompany ::-moz-placeholder{
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #bbb;
+    }
+
+    section#CreateCompany :-ms-input-placeholder, section#UpdateCompany :-ms-input-placeholder, section#GetCompany :-ms-input-placeholder, section#GetAllCompanies :-ms-input-placeholder, section#RemoveCompany :-ms-input-placeholder{
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #bbb;
+    }
+
+    section#CreateCompany .text-danger, section#UpdateCompany .text-danger, section#GetCompany .text-danger, section#GetAllCompanies .text-danger, section#RemoveCompany .text-danger{
+        color: #e74c3c;
+    }
+
+    section#CreateCustomer .section-heading, section#UpdateCustomer .section-heading, section#GetCustomer .section-heading, section#GetAllCustomers .section-heading, section#RemoveCustomer .section-heading {
+        color: #fff;
+    }
+
+    section#CreateCustomer .form-group, section#UpdateCustomer .form-group, section#GetCustomer .form-group, section#GetAllCustomers .form-group, section#RemoveCustomer .form-group{
+        margin-bottom: 25px;
+    }
+
+        section#CreateCustomer .form-group input, section#UpdateCustomer .form-group input, section#GetCustomer .form-group input, section#GetAllCustomers .form-group input, section#RemoveCustomer .form-group input {
+            padding: 20px;
+        }
+
+            section#CreateCustomer .form-group input.form-control, section#UpdateCustomer .form-group input.form-control, section#GetCustomer .form-group input.form-control, section#GetAllCustomers .form-group input.form-control, section#RemoveCustomer .form-group input.form-control  {
+                height: auto;
+            }
+
+            section#CreateCustomer .form-group textarea.form-control, section#UpdateCustomer .form-group textarea.form-control, section#GetCustomer .form-group textarea.form-control, section#GetAllCustomers .form-group textarea.form-control, section#RemoveCustomer .form-group textarea.form-control{
+                height: 236px;
+            }
+
+    section#CreateCustomer .form-control:focus, section#UpdateCustomer .form-control:focus, section#GetCustomer .form-control:focus, section#GetAllCustomers .form-control:focus, section#RemoveCustomer .form-control:focus {
+        border-color: #fed136;
+        box-shadow: none;
+    }
+
+    section#CreateCustomer ::-webkit-input-placeholder, section#UpdateCustomer ::-webkit-input-placeholder, section#GetCustomer ::-webkit-input-placeholder, section#GetAllCustomers ::-webkit-input-placeholder, section#RemoveCustomer ::-webkit-input-placeholder {
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #bbb;
+    }
+
+    section#CreateCustomer :-moz-placeholder, section#UpdateCustomer :-moz-placeholder, section#GetCustomer :-moz-placeholder, section#GetAllCustomers :-moz-placeholder, section#RemoveCustomer :-moz-placeholder{
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #bbb;
+    }
+
+    section#CreateCustomer ::-moz-placeholder , section#UpdateCustomer ::-moz-placeholder, section#GetCustomer ::-moz-placeholder , section#GetAllCustomers ::-moz-placeholder, section#RemoveCustomer ::-moz-placeholder{
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #bbb;
+    }
+
+    section#CreateCustomer :-ms-input-placeholder, section#UpdateCustomer :-ms-input-placeholder, section#GetCustomer :-ms-input-placeholder, section#GetAllCustomers :-ms-input-placeholder, section#RemoveCustomer :-ms-input-placeholder{
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #bbb;
+    }
+
+    section#CreateCustomer .text-danger, section#UpdateCustomer .text-danger, section#GetCustomer .text-danger, section#GetAllCustomers .text-danger, section#RemoveCustomer .text-danger{
+        color: #e74c3c;
+    }
+    
+    #note {
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}

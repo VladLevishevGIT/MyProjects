@@ -1,7 +1,0 @@
-package core;
-
-import org.json.JSONObject;
-
-public class JSONReader {
-
-}

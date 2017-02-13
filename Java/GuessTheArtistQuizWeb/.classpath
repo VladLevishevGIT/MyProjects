@@ -8,5 +8,9 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/MyProjects/Java/ExternalJars/org.json.jar"/>
+	<classpathentry kind="lib" path="D:/MyProjects/Java/ExternalJars/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="D:/MyProjects/Java/ExternalJars/javax.jws-3.1.2.jar"/>
+	<classpathentry kind="lib" path="D:/MyProjects/Java/ExternalJars/javax.ws.rs.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,8 +1,0 @@
-package core;
-
-import org.json.JSONObject;
-
-public class JSONObject JSONReaderFromURL (String url) {
-
-	return null;
-}

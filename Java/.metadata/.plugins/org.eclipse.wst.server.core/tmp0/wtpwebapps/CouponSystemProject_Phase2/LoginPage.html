@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+        <script src="js/JavaScript.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/AngularJS_Login.js"></script>
+	</head>
+	<body ng-app="loginApp">
+        <div ng-controller="loginCtrl">
+          <div class="modal-dialog">
+             <div class="modal-content">
+                  <div class="modal-body">
+                    <form class="col-md-12 center-block" name="mainForm" method="get">
+                      <div>
+                          <br />
+                          <h2><label class="col-sm-offset-2 col-sm-4">Login as:</label></h2>
+                          <div class="col-md-5">
+                              <select name="user" id="user" class="form-control input-lg" ng-model="submitUser.user">
+                                  <option>Administrator</option>
+                                  <option>Company</option>
+                                  <option>Customer</option>
+                              </select>
+                              <br />
+                          </div>
+                      </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control input-lg" placeholder="Name" name="name" ng-model="submitUser.name">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control input-lg" placeholder="Password" name="password" ng-model="submitUser.password">
+                        <span id="span-input">"Name" and/or "Password" inputs are empty</span>
+                    </div>
+                    <div class="form-group">
+                      <input class="btn btn-primary btn-lg btn-block" id="submit" type="submit" value="Sign In" ng-click="signIn()">
+                    </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <div class="col-md-12">
+                  <button class="btn">Cancel</button>
+		          </div>	
+                  </div>
+              </div>
+          </div>
+        </div>
+	</body>
+</html>

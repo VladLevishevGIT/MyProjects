@@ -11,21 +11,31 @@
 </head>
 <body>
     <div style="height:50px"></div>
-        <div class="panel panel-default col-lg-offset-3 col-lg-6">
+        <div class="panel panel-default col-lg-offset-3 col-lg-6" ng-app="" ng-controller="songsContorller">
             <div class="panel-body">
                 <div class="text-center"><h1>Guess the artist!</h1></div>
-                <div class="input-group">
+                <div class="input-group" ng-repeat="song in songs">
                     <div style="height:50px"></div>
-                    <input type="text" name="song01" value="" class="input-lg" placeholder="song01" />
+                    <div class="text-danger"><h3>Round 1</h3></div>
+                    <div class="row">
+                        <button type="button" class="btn btn-lg btn-default">1</button>
+                        <input type="text" name="song01" value="" class="input input-lg" placeholder="song01" />
+                    </div>
                     <div style="height:50px"></div>
-                    <input type="text" name="song02" value="" class="input-lg" placeholder="song02" />
-                    <input type="text" name="answer" value="" class="input-lg" placeholder="answer" />
-                    <button class="btn btn-success">submit</button> 
-                    <div style="height:50px"></div>
-                    <input type="text" name="song03" value="" class="input-lg" placeholder="song03" />
-                    <img src="#" alt="Alternate Text" class="img-rounded" />
-                    <div style="height:50px"></div>
-                </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-lg btn-default">2</button>
+                        <input type="text" name="song02" value="" class="input-lg" placeholder="song02" />
+                        <input type="text" name="answer" value="" class="input-lg" placeholder="answer" />
+                        <button class="btn btn-success">submit</button>
+                    </div>
+                        <div style="height:50px"></div>
+                    <div class="row">
+                        <button type="button" class="btn btn-lg btn-default">3</button>
+                        <input type="text" name="song03" value="" class="input-lg" placeholder="song03" />
+                        <img src="#" alt="Alternate Text" class="img-rounded" />
+                    </div>
+                        <div style="height:50px"></div>
+                    </div>
             </div>
         </div>
 </body>

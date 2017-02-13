@@ -1,0 +1,9 @@
+package web;
+
+import javax.jws.WebService;
+
+@WebService
+public class QuizWebService {
+	
+
+}

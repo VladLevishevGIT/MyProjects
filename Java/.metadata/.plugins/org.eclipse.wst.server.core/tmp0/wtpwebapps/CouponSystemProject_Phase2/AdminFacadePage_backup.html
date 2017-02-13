@@ -1,0 +1,587 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdminServicePage</title>
+<!-- Core CSS - Include with every page -->
+<link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href="assets/plugins/pace/pace-theme-big-counter.css"
+	rel="stylesheet" />
+<link href="assets/css/style.css" rel="stylesheet" />
+<link href="assets/css/main-style.css" rel="stylesheet" />
+
+<!-- Core Scripts - Include with every page -->
+<script src="js/angular.js"></script>
+<script src="assets/plugins/jquery-1.10.2.js"></script>
+<script src="assets/scripts/mainScripts.js"></script>
+<script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="assets/scripts/siminta.js"></script>
+<script src="js/AngularJS_MainCode.js"></script>
+<script>
+	$(document).ready(function() {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+</head>
+<body ng-app="adminApp">
+	<!--  wrapper -->
+	<div class="stat" id="wrapper">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<header>
+				<div class="intro-text">
+					<br />
+					<div class="intro-lead-in">Welcome To Coupon-System Project!</div>
+					<div class="intro-heading">Administrator facade</div>
+					<br /> <br />
+				</div>
+			</header>
+		</nav>
+		<!-- navbar side -->
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<!-- side-menu -->
+			<ul class="nav" id="side-menu">
+				<li><a class="text-primary" href="#"
+					ng-click="section1=false;section2=false"><strong>Company
+							Features</strong><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="#CreateCompany"
+							ng-click="view1=true;view2=false;view3=false;view4=false;view5=false;section2=false;section1=true">Create
+								New Company</a></li>
+						<li><a href="#RemoveCompany"
+							ng-click="view1=false;view2=true;view3=false;view4=false;view5=false;section2=false;section1=true">Remove
+								Company</a></li>
+						<li><a href="#UpdateCompany"
+							ng-click="view1=false;view2=false;view3=true;view4=false;view5=false;section2=false;section1=true">Update
+								Company</a></li>
+						<li><a href="#GetCompany"
+							ng-click="view1=false;view2=false;view3=false;view4=true;view5=false;section2=false;section1=true">Get
+								Company</a></li>
+						<li><a href="#GetAllCompanies"
+							ng-click="view1=false;view2=false;view3=false;view4=false;view5=true;section2=false;section1=true">Get
+								All Companies</a></li>
+					</ul></li>
+				<li><a class="text-primary" href="#"
+					ng-click="section2=false;section1=false"><strong>Customer
+							Features</strong><span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li><a href="#CreateCustomer"
+							ng-click="view1=true;view2=false;view3=false;view4=false;view5=false;section1=false;section2=true">Create
+								New Customer</a></li>
+						<li><a href="#RemoveCustomer"
+							ng-click="view1=false;view2=true;view3=false;view4=false;view5=false;section1=false;section2=true">Remove
+								Customer</a></li>
+						<li><a href="#UpdateCustomer"
+							ng-click="view1=false;view2=false;view3=true;view4=false;view5=false;section1=false;section2=true">Update
+								Customer</a></li>
+						<li><a href="#GetCustomer"
+							ng-click="view1=false;view2=false;view3=false;view4=true;view5=false;section1=false;section2=true">Get
+								Customer</a></li>
+						<li><a href="#GetAllCustomers"
+							ng-click="view1=false;view2=false;view3=false;view4=false;view5=true;section1=false;section2=true">Get
+								All Customers</a></li>
+					</ul> <!-- second-level-items --></li>
+			</ul>
+			<!-- end side-menu -->
+		</nav>
+		<!-- end navbar side -->
+
+		<!--  page-wrapper -->
+		<div id="page-wrapper">
+			<div id="mainCreationDiv">
+				<section id="Company" ng-show="section1">
+					<!-- Create Company Section -->
+					<section id="CreateCompany" ng-show="view1">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">New Company Creation Form</h2>
+								</div>
+							</div>
+							<div class="row" ng-controller="createComp">
+								<div class="col-lg-12">
+									<div class="alert alert-success text-center"
+										ng-show="showSuccessAlert">
+										<button type="button" class="close"
+											data-ng-click="switchBool('showSuccessAlert')">×</button>
+										<strong>Done!</strong> {{successTextAlert}}
+									</div>
+									<form name="sentMessage" id="contactForm">
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group">
+													<input type="text" class="form-control"
+														ng-model="company.compName" placeholder="Company Name *"
+														id="name" required
+														data-validation-required-message="Please enter the company's' name.">
+													<p class="help-block text-danger"></p>
+												</div>
+												<div class="form-group">
+													<input type="password" class="form-control"
+														ng-model="company.password"
+														placeholder="Company Password *" id="password" required
+														data-validation-required-message="Please enter the password.">
+													<p class="help-block text-danger"></p>
+												</div>
+												<div class="form-group">
+													<input type="email" class="form-control"
+														ng-model="company.email" placeholder="Company Email *"
+														id="phone" required
+														data-validation-required-message="Please enter the company's email address'.">
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg"
+													ng-click="createCompany()">Create New Company</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Remove Company Section -->
+					<section id="RemoveCompany" ng-show="view2" ng-controller="removeCompSectionCtrl">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">Remove Company Form</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<form name="sentMessage" id="contactForm" novalidate>
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group col-md8">
+													<input type="text" class="form-control"
+														placeholder="Enter Company Name For Removing*" id="name"
+														required
+														data-validation-required-message="Please enter your name.">
+													<p></p>
+													<textarea class="form-control"
+														placeholder="Removed Company Information*"></textarea>
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg">Remove
+													Company</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Update Company Section -->
+					<section id="UpdateCompany" ng-show="view3">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">Company Update Form</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<form name="sentMessage" id="contactForm" novalidate>
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group">
+													<input type="text" class="form-control"
+														placeholder="Company Name *" id="name" required
+														data-validation-required-message="Please enter your name.">
+													<p class="help-block text-danger"></p>
+												</div>
+												<div class="form-group">
+													<input type="email" class="form-control"
+														placeholder="Company Password *" id="email" required
+														data-validation-required-message="Please enter your email address.">
+													<p class="help-block text-danger"></p>
+												</div>
+												<div class="form-group">
+													<input type="tel" class="form-control"
+														placeholder="Company Email *" id="phone" required
+														data-validation-required-message="Please enter your phone number.">
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg">Update
+													Company</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Get Company Section -->
+					<section id="GetCompany" ng-show="view4">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">Get Company Form</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<form name="getCompany" id="contactForm">
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group col-md8">
+													<input type="text" class="form-control"
+														placeholder="Company Name*" id="name" required
+														data-validation-required-message="Please enter your name.">
+													<p></p>
+													<textarea class="form-control"
+														placeholder="Company Information*"></textarea>
+												</div>
+											</div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg">Get
+													Company</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Get All Companies Section -->
+					<section id="GetAllCompanies" ng-show="view5"
+						ng-controller="getAllCompCtrl">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">All Companies List</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+
+
+									<div id="showEditForm" class="modal fade" role="dialog">
+										<div class="modal-dialog">
+
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h2 class="text-center">Edit Company Information</h2>
+												</div>
+												<div class="text-center">
+													<p>
+													<div class="col-lg-offset-3 col-lg-1">
+														<strong>ID:</strong>
+													</div>
+													<div class="col-lg-5">{{compFullInf.id}}</div>
+													</br>
+													<div class="col-lg-offset-3 col-lg-1">
+														<strong>Name:</strong>
+													</div>
+													<div class="col-lg-5">{{compFullInf.compName}}</div>
+													</br>
+													<div class="col-lg-offset-3 col-lg-1">
+														<strong>Email:</strong>
+													</div>
+													<div class="col-lg-5">
+														<input type="text" class="form-control"
+															ng-model="compFullInf.email"
+															placeholder="{{compFullInf.email}}" id="email" required
+															data-validation-required-message="Please enter the company's' name.">
+													</div>
+													</br>
+													</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default btn-success"
+														ng-click="updateComp(compFullInf)" data-dismiss="modal">Approve</button>
+													<button type="button" class="btn btn-default btn-danger"
+														data-dismiss="modal">Close</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div id="myModal" class="modal fade" role="dialog">
+										<div class="modal-dialog">
+
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h2 class="text-center">Full Company Information</h2>
+												</div>
+												<div class="text-center">
+													<p>
+														<strong>ID:</strong>{{compFullInf.id}}</br> <strong>Name:</strong>{{compFullInf.compName}}</br>
+														<strong>Email:</strong>{{compFullInf.email}}
+													</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default btn-link"
+														data-toggle="modal" data-target="#showEditForm"
+														data-dismiss="modal">Edit</button>
+													<button type="button" class="btn btn-default btn-danger"
+														data-dismiss="modal">Close</button>
+												</div>
+											</div>
+
+
+										</div>
+									</div>
+									<form name="sentMessage" id="contactForm" novalidate>
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group col-md8">
+													<p></p>
+													<div class="table-responsive text-center" id="allCompanies">
+														<table class="table table-hover table-bordered"
+															ng-controller="checkedRemoveCompCtrl">
+															<thead>
+																<tr>
+																	<th class="text-center">Company ID</th>
+																	<th class="text-center">Company Name</th>
+																	<th class="text-center"><button type="submit"
+																			class="btn btn-danger"
+																			ng-click="removeCompFromCheckedList()">Delete</button></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr ng-repeat="value in companies">
+																	<td class="vert-align" data-toggle="modal"
+																		data-target="#myModal"
+																		ng-click="showFullCompInf(value)"
+																		title="Click to show full informatiion">{{value.id}}</td>
+																	<td class="vert-align" data-toggle="modal"
+																		data-target="#myModal"
+																		ng-click="showFullCompInf(value)"
+																		title="Click to show full informatiion">{{value.compName}}</td>
+																	<td class="vert-align"><input type="checkbox"
+																		name="selectedCompanies[]" value="{{value.id}}"
+																		ng-model="value.selected"></td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-lg-12 text-center"></div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+				<!-- Create Customer Section -->
+				<section id="Customer" ng-show="section2">
+					<section id="CreateCustomer" ng-show="view1">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">New Customer Creation Form</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<form name="sentMessage" id="contactForm" novalidate>
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group">
+													<input type="text" class="form-control"
+														placeholder="Customer Name *" id="name" required
+														data-validation-required-message="Please enter your name.">
+													<p class="help-block text-danger"></p>
+												</div>
+												<div class="form-group">
+													<input type="email" class="form-control"
+														placeholder="Customer Password *" id="email" required
+														data-validation-required-message="Please enter your email address.">
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg">Create
+													New Customer</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+
+
+					<!-- Remove Customer Section -->
+					<section id="RemoveCustomer" ng-show="view2">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">Remove Customer Form</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<form name="sentMessage" id="contactForm" novalidate>
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group col-md8">
+													<input type="text" class="form-control"
+														placeholder="Enter Customer Name For Removing*" id="name"
+														required
+														data-validation-required-message="Please enter your name.">
+													<p></p>
+													<textarea class="form-control"
+														placeholder="Removed Customer Information*"></textarea>
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg">Remove
+													Customer</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Update Customer Section -->
+					<section id="UpdateCustomer" ng-show="view3">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">Customer Update Form</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<form name="sentMessage" id="contactForm" novalidate>
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group">
+													<input type="text" class="form-control"
+														placeholder="Customer Name *" id="name" required
+														data-validation-required-message="Please enter your name.">
+													<p class="help-block text-danger"></p>
+												</div>
+												<div class="form-group">
+													<input type="email" class="form-control"
+														placeholder="Customer Password *" id="email" required
+														data-validation-required-message="Please enter your email address.">
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg">Update
+													Customer</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Get Customer Section -->
+					<section id="GetCustomer" ng-show="view4">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">Get Customer Form</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<form name="sentMessage" id="contactForm" novalidate>
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group col-md8">
+													<input type="text" class="form-control"
+														placeholder="Customer Name*" id="name" required
+														data-validation-required-message="Please enter your name.">
+													<p></p>
+													<textarea class="form-control"
+														placeholder="Customer Information*"></textarea>
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg">Get
+													Customer</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Get All Customers Section -->
+					<section id="GetAllCustomers" ng-show="view5">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<br />
+									<h2 class="section-heading">Get All Customers Form</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<form name="sentMessage" id="contactForm" novalidate>
+										<div class="row">
+											<div class="col-md-offset-2 col-md-8">
+												<div class="form-group col-md8">
+													<p></p>
+													<textarea class="form-control"
+														placeholder="All Customers Information*"></textarea>
+													<p class="help-block text-danger"></p>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+											<div class="col-lg-12 text-center">
+												<button type="submit" class="btn btn-danger btn-lg">Get
+													All Customers</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</div>
+			<!-- end page-wrapper -->
+		</div>
+		<!-- end wrapper -->
+	</div>
+</body>
+
+</html>
