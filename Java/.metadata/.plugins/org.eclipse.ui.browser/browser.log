@@ -1,0 +1,6 @@
+
+Feb 14, 2017 15:27:25.37 NEW SESSION
+Feb 14, 2017 15:27:25.37 [19600:18184:0214/152725.364:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+Feb 14, 2017 17:56:22.76 [19600:18184:0214/175622.758:ERROR:gcm_channel_status_request.cc(89)] GCM channel request failed.
+Feb 14, 2017 18:31:43.24 [19600:18184:0214/183143.242:ERROR:navigation_entry_screenshot_manager.cc(141)] Invalid entry with unique id: 21
+Feb 14, 2017 18:49:07.63 [19600:18184:0214/184907.627:ERROR:navigation_entry_screenshot_manager.cc(141)] Invalid entry with unique id: 49

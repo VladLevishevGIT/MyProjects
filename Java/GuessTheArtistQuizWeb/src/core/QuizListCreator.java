@@ -48,10 +48,10 @@ public class QuizListCreator {
 		
 		JSONObject songs = new JSONObject();
 
-		songs.put("Artist Name",artist);
-		songs.put("First Song",firstSong);
-		songs.put("Second Song",secondSong);
-		songs.put("Third Song",thirdSong);
+		songs.put("ArtistName",artist);
+		songs.put("FirstSong",firstSong);
+		songs.put("SecondSong",secondSong);
+		songs.put("ThirdSong",thirdSong);
 
 		return songs;
 	}
