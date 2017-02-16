@@ -3,5 +3,5 @@ angular.module('myApp', [])
 	$http
 	.get("rest/quizWebService/getSongs")
 	.success(function(response) {
-		$scope.songs = response.song;})
+		})
 	});

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;lib&apos; to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;CouponSystemProject_Phase2&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original element: &apos;lib&apos;" description="Copy folder" element1="WebContent/WEB-INF/lib" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1487253390275" target="/GuessTheArtistQuizWeb/WebContent/WEB-INF/lib" units="0" version="1.0"/>
+</session>
