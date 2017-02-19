@@ -1,0 +1,42 @@
+package core;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class JavaRoundBean {
+	
+	private String artistName;
+	private String firstSong;
+	private String secondSong;
+	private String thirdSong;
+	
+	
+	public String getArtistName() {
+		return artistName;
+	}
+	public void setArtistName(String artistName) {
+		artistName = this.artistName;
+	}
+	public String getFirstSong() {
+		return FirstSong;
+	}
+	public void setFirstSong(String firstSong) {
+		FirstSong = firstSong;
+	}
+	public String getSecondSopng() {
+		return SecondSong;
+	}
+	public void setSecondSopng(String secondSopng) {
+		SecondSong = secondSopng;
+	}
+	public String getThirdSOnfg() {
+		return ThirdSong;
+	}
+	public void setThirdSOnfg(String thirdSOnfg) {
+		ThirdSong = thirdSOnfg;
+	}
+	
+	
+	
+
+}

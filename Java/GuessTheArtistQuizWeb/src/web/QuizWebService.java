@@ -12,8 +12,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-
 import org.json.JSONException;
+import core.JavaRoundBean;
+import core.QuizListCreator;
 
 @WebService
 @Path("quizWebService")
@@ -27,19 +28,17 @@ public class QuizWebService {
 	
 	@Path("getSongs")
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public void getSongs() throws MalformedURLException, IOException, JSONException{
-/*		HttpSession session = req.getSession();
-		if (session!=null){*/
-			System.out.println("GOOD");
-		/*QuizListCreator qc = new QuizListCreator();
-		JSONObject songs = qc.JSONsongsCreator(qc.artistRandomChooser());*/
-			/*String songs = "SONGS";*/
-		/*return songs;
+	@Produces(MediaType.APPLICATION_JSON)
+	public JavaRoundBean getSongs() throws MalformedURLException, IOException, JSONException{
+		HttpSession session = req.getSession(false);
+		if (true){
+			QuizListCreator qc = new QuizListCreator();
+			JavaRoundBean round = qc.RoundCreator(qc.artistRandomChooser());
+			return round;
 		} else {
 			res.sendError(505);
-			return null;
-		}*/
+		}
+		return null;
 	}
 
 }

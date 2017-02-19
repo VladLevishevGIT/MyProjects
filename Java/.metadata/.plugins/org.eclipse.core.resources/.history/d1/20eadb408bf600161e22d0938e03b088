@@ -1,0 +1,19 @@
+/*var adminApp = angular.module("myApp", []);
+
+adminApp.controller("myCtrl", function($scope, $http) {
+	$scope.myFunc = function() {
+
+		var data = $scope.songs;
+		$http.get("rest/quizWebService/getSongs").success(function(response) {
+			$scope.companies = response.company;
+		})
+	}
+});*/
+
+angular.module('myApp', [])
+.controller('myCtrl', function($scope, $http) {
+    $http.get('http://rest-service.guides.spring.io/greeting').
+        then(function(response) {
+            $scope.greeting = response.data;
+        });
+});

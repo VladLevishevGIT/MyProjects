@@ -25,7 +25,7 @@ public class Test {
 		System.out.println(json.getJSONArray("results").getJSONObject(0).getString("artistName"));*/
 		
 		QuizListCreator qc = new QuizListCreator();
-		System.out.println(qc.JSONsongsCreator(qc.artistRandomChooser()).toString());
+		System.out.println(qc.RoundCreator(qc.artistRandomChooser()).toString());
 	}
 
 }
