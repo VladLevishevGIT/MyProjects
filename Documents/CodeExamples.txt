@@ -40,3 +40,24 @@ public class JsonReader {
     System.out.println(json.get("id"));
   }
 }
+
+Pass value form INPUT to function (AngularJS)
+
+<form ng-controller="formCtrl">     
+    <input type="text" name="name" ng-model="inputValue" />
+    <button ng-click="abc(inputValue)"></button>
+</form>
+Or using ng-submit directive:
+
+<form ng-controller="formCtrl" ng-submit="abc(inputValue)">     
+    <input type="text" name="name" ng-model="inputValue" />
+    <button type="submit"></button>
+</form>
+And in your formCtrl controller:
+
+.controller('formCtrl', function () {
+    $scope.inputValue = null;
+    $scope.abc = function (value) {
+        console.log(value);
+    };
+});

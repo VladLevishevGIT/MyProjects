@@ -18,10 +18,3 @@ mainApp.controller('myCtrl', function($scope, $http) {
             $scope.round = response.data;
         });
 });
-
-mainApp.controller('song01Ctrl',function () {
-    $scope.inputValue = null;
-    $scope.myFunc = function (value) {
-        alert(inputValue);
-    };
-});

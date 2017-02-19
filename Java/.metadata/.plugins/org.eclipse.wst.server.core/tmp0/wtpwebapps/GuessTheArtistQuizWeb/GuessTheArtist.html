@@ -25,15 +25,17 @@
                     </div>
                     <div style="height:50px"></div>
                     <div class="row">
+                   	 <form ng-controller="song01Ctrl">
                         <button type="button" class="btn btn-lg btn-default">2</button>
-                        <input type="text" name="song02" value="{{round.secondSong}}" class="input-lg" placeholder="song02" />
-                        <input type="text" name="answer" value="" class="input-lg" placeholder="answer" />
-                        <button class="btn btn-success" ng-click="myFunc()">submit</button>
+                        <input type="text" name="song02" value="" class="input-lg" placeholder="song02"/>
+                        <input type="text" name="answer" value="" class="input-lg" placeholder="answer" ng-model="inputValue"/>
+                        <button class="btn btn-success" ng-click="myFunc(inputValue)">submit</button>
+                     </form>
                     </div>
                         <div style="height:50px"></div>
                     <div class="row">
                         <button type="button" class="btn btn-lg btn-default">3</button>
-                        <input type="text" name="song03" value="{{round.thirdSong}}" class="input-lg" placeholder="song03" />
+                        <input type="text" name="song03" value="" class="input-lg" placeholder="song03" />
                         <img src="#" alt="Alternate Text" class="img-rounded" />
                     </div>
                         <div style="height:50px"></div>

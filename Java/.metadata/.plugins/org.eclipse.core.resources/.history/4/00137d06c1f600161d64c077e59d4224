@@ -22,6 +22,6 @@ mainApp.controller('myCtrl', function($scope, $http) {
 mainApp.controller('song01Ctrl',function () {
     $scope.inputValue = null;
     $scope.myFunc = function (value) {
-        alert(inputValue);
+        alert(value);
     };
 });
