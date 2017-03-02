@@ -1,9 +1,0 @@
-package web;
-
-import javax.jws.*;
-
-@WebService
-public class WebService {
-	
-
-}

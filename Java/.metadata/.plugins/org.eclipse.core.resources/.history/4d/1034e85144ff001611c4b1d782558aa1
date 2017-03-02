@@ -1,0 +1,14 @@
+var mainApp = angular.module('myApp', [])
+
+mainApp.controller('myCtrl', getRound);
+		
+function getRound($scope, $http, $window) {
+    $http.get('rest/quizWebService/getSongs').
+        then(function(response) {
+            $scope.round = response.data;
+            $scope.sessionData();
+        });
+    function sessionData ($window){
+    	$scope.testString = $window.sessionStorage.length;
+    }
+};

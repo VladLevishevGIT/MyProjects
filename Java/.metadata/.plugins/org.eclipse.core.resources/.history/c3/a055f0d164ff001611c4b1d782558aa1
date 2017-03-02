@@ -1,0 +1,28 @@
+var mainApp = angular.module('myApp', [])
+
+mainApp.controller('myCtrl', 
+		
+function($scope, $http) {
+	
+    $http.get('rest/quizWebService/getFirstSong').
+        then(function(response) {
+            $scope.round = response.data
+        	$scope.counter = 0;
+        });
+        
+    $scope.getOneMoreSong = function("counter"){
+    	if(counter == 0){
+    	$http.get('rest/quizWebService/getSecondSong')
+    	.then(function(response){
+    		$scope.round = response.data
+    		$scope.counter += counter;
+    	});
+    	} else {
+    		$http.get('rest/quizWebService/getThirdSong')
+        	.then(function(response){
+        		$scope.round = response.data
+        	});
+    	}
+    };
+});
+

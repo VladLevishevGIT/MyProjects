@@ -1,7 +1,0 @@
-package web;
-
-@javax.jws.WebService
-public class WebService {
-	
-
-}

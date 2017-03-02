@@ -1,0 +1,18 @@
+var mainApp = angular.module('myApp', [])
+
+mainApp.controller('myCtrl', 
+		
+function($scope, $http) {
+	
+    $http.get('rest/quizWebService/getFirstSong').
+        then(function(response) {
+            $scope.round = response.data
+        });
+        
+    $scope.testFunc = function(){
+    	$http.get('rest/quizWebService/printRound').then(function(response){
+    		alert("GOOD");
+    	});
+    };
+});
+

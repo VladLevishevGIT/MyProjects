@@ -1,0 +1,10 @@
+var mainApp = angular.module('myApp', [])
+
+mainApp.controller('myCtrl', getRound);
+		
+function getRound($scope, $http) {
+    $http.get('rest/quizWebService/getSongs1').
+        then(function(response) {
+            $scope.round = response.data;
+        });
+};

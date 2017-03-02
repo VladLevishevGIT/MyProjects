@@ -26,15 +26,43 @@ public class QuizWebService {
 	@Context
 	private HttpServletResponse res;
 	
-	@Path("getSongs")
+	@Path("getFirstSong")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JavaRoundBean getSongs() throws MalformedURLException, IOException, JSONException{
-		HttpSession session = req.getSession(false);
-		if (true){
+	public JavaRoundBean getFirstSong() throws MalformedURLException, IOException, JSONException{
+		HttpSession session = req.getSession(true);
+		if (!session.equals(null)){
 			QuizListCreator qc = new QuizListCreator();
 			JavaRoundBean round = qc.RoundCreator(qc.artistRandomChooser());
-			return round;
+			session.setAttribute("round", round);
+			session.setAttribute("songsCounter", 0);
+			JavaRoundBean returnedRound = new JavaRoundBean();
+			returnedRound.setFirstSong(round.getFirstSong());
+			return returnedRound;
+		} else {
+			res.sendError(505);
+		}
+		return null;
+	}
+	
+	@Path("getOneMoreSong")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public JavaRoundBean getSecondSong() throws MalformedURLException, IOException, JSONException{
+		HttpSession session = req.getSession(false);
+		if (!session.equals(null)){
+			Integer counter = (Integer)session.getAttribute("songsCounter");
+			if(counter == 0){
+				JavaRoundBean returnedRound = (JavaRoundBean)session.getAttribute("round");
+				returnedRound.setThirdSong(null);
+				session.removeAttribute("songsCounter");
+				session.setAttribute("songsCounter", 1);
+				return returnedRound;
+				} else {
+				JavaRoundBean returnedRound = (JavaRoundBean)session.getAttribute("round");
+				return returnedRound;
+			}
+			
 		} else {
 			res.sendError(505);
 		}
