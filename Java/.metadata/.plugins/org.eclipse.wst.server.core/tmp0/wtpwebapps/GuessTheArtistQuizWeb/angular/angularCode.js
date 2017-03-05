@@ -9,10 +9,11 @@ function($scope, $http) {
             $scope.round = response.data
         });
         
-    $scope.getOneMoreSong = function(){
-    	$http.get('rest/quizWebService/getOneMoreSong')
+    $scope.getOneMoreSong = function(inputValue){
+    	$http.get('rest/quizWebService/getOneMoreSong/'+inputValue)
     	.then(function(response){
     		$scope.round = response.data
+    		$scope.inputValue = null;
     	});
     };
 });
