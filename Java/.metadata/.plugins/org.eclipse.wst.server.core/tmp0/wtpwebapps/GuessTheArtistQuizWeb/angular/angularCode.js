@@ -16,5 +16,12 @@ function($scope, $http) {
     		$scope.inputValue = null;
     	});
     };
+    
+    $scope.nextRound = function(inputValue){
+    	$http.get('rest/quizWebService/getFirstSong').
+        then(function(response) {
+            $scope.round = response.data
+        });
+    };
 });
 

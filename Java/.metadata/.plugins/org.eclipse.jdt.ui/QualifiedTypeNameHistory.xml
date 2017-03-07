@@ -26,6 +26,6 @@
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlRootElement"/>
 <fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
-<fullyQualifiedTypeName name="core.JavaRoundBean"/>
 <fullyQualifiedTypeName name="web.QuizWebService"/>
+<fullyQualifiedTypeName name="core.JavaRoundBean"/>
 </qualifiedTypeNameHistroy>

@@ -18,7 +18,7 @@
                 <div class="text-center"><h1>Guess the artist!</h1></div>
                 <div class="input-group">
                     <div style="height:50px"></div>
-                    <div class="text-danger"><h3>Round 1</h3></div>
+                    <div class="text-danger"><h3>Round {{round.roundNumber}}</h3></div>
                     <div><strong>Score: {{round.roundScore}}</strong></div>
                     <div><strong>Total Score: {{round.totalScore}}</strong></div>
                      <div><strong>Answer: {{round.artistName}}</strong></div>
@@ -31,7 +31,8 @@
                         <button type="button" class="btn btn-lg btn-default">2</button>
                         <input type="text" name="song02" value="{{round.secondSong}}" class="input-lg" placeholder="song02"/>
                         <input type="text" name="answer" value="" class="input-lg" placeholder="answer" ng-model="inputValue"/>
-                        <button class="btn btn-success" ng-click="getOneMoreSong(inputValue)">submit</button>
+                        <button class="btn btn-success" ng-click="getOneMoreSong(inputValue)">Next Song</button>
+                        <button class="btn btn-danger" ng-click="nextRound()">Next Round</button>
                     </div>
                         <div style="height:50px"></div>
                     <div class="row">
