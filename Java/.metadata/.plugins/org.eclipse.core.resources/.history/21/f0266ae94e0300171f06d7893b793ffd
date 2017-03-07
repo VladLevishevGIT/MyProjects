@@ -34,18 +34,26 @@ public class QuizWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public JavaRoundBean getFirstSong() throws MalformedURLException, IOException, JSONException {
 		HttpSession session = req.getSession(true);
-		if (!session.equals(null)) {
-			QuizListCreator qc = new QuizListCreator();
-			JavaRoundBean round = qc.RoundCreator(qc.artistRandomChooser());
-			round.setRoundScore(50);
-			session.setAttribute("round", round);
-			session.setAttribute("songsCounter", "0");
-			JavaRoundBean returnedRound = new JavaRoundBean();
-			returnedRound.setArtistName(round.getArtistName());
-			returnedRound.setFirstSong(round.getFirstSong());
-			return returnedRound;
-		} else {
-			res.sendError(505);
+		Integer roundNumber = (Integer) session.getAttribute("roundNumber");
+		if (roundNumber == null) {
+			roundNumber = 1;
+		}
+		while (roundNumber <= 5) {
+			if (!session.equals(null)) {
+				QuizListCreator qc = new QuizListCreator();
+				JavaRoundBean round = qc.RoundCreator(qc.artistRandomChooser());
+				round.setRoundScore(50);
+				session.setAttribute("round", round);
+				session.setAttribute("songsCounter", "0");
+				session.setAttribute("roundNumber", roundNumber);
+				JavaRoundBean returnedRound = new JavaRoundBean();
+				returnedRound.setRoundNumber(roundNumber);
+				returnedRound.setArtistName(round.getArtistName());
+				returnedRound.setFirstSong(round.getFirstSong());
+				return returnedRound;
+			} else {
+				res.sendError(505);
+			}
 		}
 		return null;
 	}
@@ -56,10 +64,11 @@ public class QuizWebService {
 	public JavaRoundBean getSecondSong(@PathParam("inputValue") String inputValue)
 			throws MalformedURLException, IOException, JSONException {
 		HttpSession session = req.getSession(false);
+		Integer roundNumber = (Integer) session.getAttribute("roundNumber");
 		JavaRoundBean answer = (JavaRoundBean) session.getAttribute("round");
-		if (!answer.getArtistName().equals(inputValue)) {
-			if (!session.equals(null)) {
-				String counter = (String) session.getAttribute("songsCounter");
+		if (!session.equals(null)) {
+			String counter = (String) session.getAttribute("songsCounter");
+			if (!answer.getArtistName().equals(inputValue) && !counter.equals("2")) {
 				if (counter.equals("0")) {
 					JavaRoundBean round = (JavaRoundBean) session.getAttribute("round");
 					round.setRoundScore(30);
@@ -70,7 +79,7 @@ public class QuizWebService {
 					session.removeAttribute("songsCounter");
 					session.setAttribute("songsCounter", "1");
 					return returnedRound;
-				} else {
+				} else if (counter.equals("1")) {
 					JavaRoundBean round = (JavaRoundBean) session.getAttribute("round");
 					round.setRoundScore(20);
 					JavaRoundBean returnedRound = new JavaRoundBean();
@@ -78,28 +87,35 @@ public class QuizWebService {
 					returnedRound.setFirstSong(round.getFirstSong());
 					returnedRound.setSecondSong(round.getSecondSong());
 					returnedRound.setThirdSong(round.getThirdSong());
+					session.removeAttribute("songsCounter");
+					session.setAttribute("songsCounter", "2");
 					return returnedRound;
 				}
-
 			} else {
-				res.sendError(505);
+				JavaRoundBean round = (JavaRoundBean) session.getAttribute("round");
+				if (!answer.getArtistName().equals(inputValue) && counter.equals("2")) {
+					round.setRoundScore(0);
+				}
+				JavaRoundBean returnedRound = new JavaRoundBean();
+				returnedRound.setRoundScore(round.getRoundScore());
+				returnedRound.setArtistName(round.getArtistName());
+				returnedRound.setFirstSong(null);
+				returnedRound.setSecondSong(null);
+				returnedRound.setThirdSong(null);
+				Integer totalScore = (Integer) session.getAttribute("totalScore");
+				if (totalScore == null) {
+					totalScore = 0;
+				}
+				returnedRound.setTotalScore(round.getRoundScore() + totalScore);
+				session.removeAttribute("totalScore");
+				session.removeAttribute("roundNumber");
+				session.setAttribute("totalScore", returnedRound.getTotalScore());
+				roundNumber++;
+				session.setAttribute("roundNumber", roundNumber);
+				return returnedRound;
 			}
 		} else {
-			JavaRoundBean round = (JavaRoundBean) session.getAttribute("round");
-			JavaRoundBean returnedRound = new JavaRoundBean();
-			returnedRound.setRoundScore(round.getRoundScore());
-			returnedRound.setArtistName(round.getArtistName());
-			returnedRound.setFirstSong(null);
-			returnedRound.setSecondSong(null);
-			returnedRound.setThirdSong(null);
-			Integer totalScore = (Integer) session.getAttribute("totalScore");
-			if (totalScore == null) {
-				totalScore = 0;
-			}
-			System.out.println(totalScore);
-			returnedRound.setTotalScore(round.getRoundScore() + totalScore);
-			session.setAttribute("totalScore", totalScore);
-			return returnedRound;
+			res.sendError(505);
 		}
 		return null;
 	}
