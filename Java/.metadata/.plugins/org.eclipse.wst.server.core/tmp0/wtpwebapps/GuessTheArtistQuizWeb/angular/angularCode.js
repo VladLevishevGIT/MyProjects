@@ -12,8 +12,13 @@ function($scope, $http) {
     $scope.getOneMoreSong = function(inputValue){
     	$http.get('rest/quizWebService/getOneMoreSong/'+inputValue)
     	.then(function(response){
-    		$scope.round = response.data
-    		$scope.inputValue = null;
+    		returnedRound = response.data
+    		if(returnedRound.firstSong != null){
+    			$scope.round = response.data
+    			$scope.inputValue = null
+    		} else {
+    			alert("TEST")
+    		}
     	});
     };
     
