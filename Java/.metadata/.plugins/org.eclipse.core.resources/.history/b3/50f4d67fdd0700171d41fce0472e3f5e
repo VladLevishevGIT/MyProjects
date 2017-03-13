@@ -1,0 +1,37 @@
+var mainApp = angular.module('myApp', [])
+
+mainApp.controller('myCtrl', 
+		
+function($scope, $http) {
+	
+    $http.get('rest/quizWebService/getFirstSong').
+        then(function(response) {
+            $scope.round = response.data
+        });
+        
+    $scope.getOneMoreSong = function(inputValue){
+    	$http.get('rest/quizWebService/getOneMoreSong/'+inputValue)
+    	.then(function(response){
+    		returnedRound = response.data
+    		if(returnedRound.firstSong != null){
+    			$scope.round = response.data
+    			$scope.inputValue = null
+    		} else {
+    			$scope.successTextAlert = "Correct!!!!!";
+    			$scope.showSuccessAlert = true;
+    			// switch flag
+    			$scope.switchBool = function(value) {
+    				$scope[value] = !$scope[value];
+    			};
+    		}
+    	});
+    };
+    
+    $scope.nextRound = function(inputValue){
+    	$http.get('rest/quizWebService/getFirstSong').
+        then(function(response) {
+            $scope.round = response.data
+        });
+    };
+});
+

@@ -17,12 +17,24 @@ function($scope, $http) {
     			$scope.round = response.data
     			$scope.inputValue = null
     		} else {
-    			alert("TEST")
+    			$scope.round = response.data
+    			$scope.inputValue = null
+    			$scope.hideNextSongButton = true
+    	    	$scope.showNextRoundButton = true
+    			$scope.successTextAlert = "Correct!!!!!";
+    			$scope.showSuccessAlert = true;
+    			// switch flag
+    			$scope.switchBool = function(value) {
+    				$scope[value] = !$scope[value];
+    			};
     		}
     	});
     };
     
     $scope.nextRound = function(inputValue){
+    	$scope.hideNextSongButton = false
+    	$scope.showNextRoundButton = false
+    	$scope.showSuccessAlert = false;
     	$http.get('rest/quizWebService/getFirstSong').
         then(function(response) {
             $scope.round = response.data
