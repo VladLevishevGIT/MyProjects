@@ -17,16 +17,16 @@ function($scope, $http) {
     			$scope.round = response.data
     			$scope.inputValue = null
     		} else {
+    			if (returnedRound.roundNumber < 5){
     			$scope.round = response.data
     			$scope.inputValue = null
     			$scope.hideNextSongButton = true
     	    	$scope.showNextRoundButton = true
     			$scope.successTextAlert = "Correct!!!!!";
     			$scope.showSuccessAlert = true;
-    			// switch flag
-    			$scope.switchBool = function(value) {
-    				$scope[value] = !$scope[value];
-    			};
+    			} else {
+    				$scope.showFinalPanel = true;
+    			}
     		}
     	});
     };

@@ -51,7 +51,7 @@
                         <div style="height:50px"></div>
                     </div>
                     <div ng-show=true>
-                    	<div class="popover"><strong>TEST</strong></div>
+                    	<div class="modal"><strong>TEST</strong></div>
                     </div>
             </div>
         </div>
