@@ -16,11 +16,16 @@
         <div class="panel panel-default col-lg-offset-3 col-lg-6" ng-app="myApp">
             <div class="panel-body" ng-controller="myCtrl">
                 <div class="text-center"><h1>Guess the artist!</h1></div>
+                	<div class="alert alert-success text-center" ng-show="showSuccessAlert">
+							<strong>Done!</strong> {{successTextAlert}}
+							<button class="btn btn-danger" ng-click="nextRound()" ng-show="showNextRoundButton">Next Round</button>
+					</div>
+					<div class="alert alert-danger text-center" ng-show="showErrorAlert">
+							<strong>Failed!</strong> {{errorTextAlert}}
+							<button class="btn btn-danger" ng-click="nextRound()" ng-show="showNextRoundButton">Next Round</button>
+					</div>
                 <div class="input-group">
                     <div style="height:50px"></div>
-                    <div class="modal modal-success" ng-show={{showSuccessPopup}}>
-                    	<h6>CORRECT!</h6>
-                    </div>
                     <div class="text-danger"><h3>Round {{round.roundNumber}}</h3></div>
                     <div><strong>Score: {{round.roundScore}}</strong></div>
                     <div><strong>Total Score: {{round.totalScore}}</strong></div>
@@ -34,8 +39,8 @@
                         <button type="button" class="btn btn-lg btn-default">2</button>
                         <input type="text" name="song02" value="{{round.secondSong}}" class="input-lg" placeholder="song02"/>
                         <input type="text" name="answer" value="" class="input-lg" placeholder="answer" ng-model="inputValue"/>
-                        <button class="btn btn-success" ng-click="getOneMoreSong(inputValue)">Next Song</button>
-                        <button class="btn btn-danger" ng-click="nextRound()">Next Round</button>
+                        <button class="btn btn-success" ng-click="getOneMoreSong(inputValue)" ng-hide="hideNextSongButton">Next Song</button>
+                        
                     </div>
                         <div style="height:50px"></div>
                     <div class="row">
@@ -44,6 +49,9 @@
                         <img src="#" alt="Alternate Text" class="img-rounded" />
                     </div>
                         <div style="height:50px"></div>
+                    </div>
+                    <div class="modal fade" role="dialog" ng-show=true>
+                    	<div><strong>TEST</strong></div>
                     </div>
             </div>
         </div>

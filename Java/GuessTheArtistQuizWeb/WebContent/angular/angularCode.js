@@ -26,6 +26,7 @@ function($scope, $http) {
     			$scope.showSuccessAlert = true;
     			} else {
     				$scope.showFinalPanel = true;
+    				$scope.hideNextSongButton = true
     			}
     		}
     	});

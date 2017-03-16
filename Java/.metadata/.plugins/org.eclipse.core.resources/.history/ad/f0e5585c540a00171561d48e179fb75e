@@ -50,31 +50,43 @@
                     </div>
                         <div style="height:50px"></div>
                     </div>
-                    <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+									<div id="showEditForm" class="modal fade" role="dialog">
+										<div class="modal-dialog">
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog" ng-show="showFinalPanel">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div ng-show="showFinalPanel">FINAL PANEL</div>
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h2 class="text-center">Edit Customer Information</h2>
+												</div>
+												<div class="text-center">
+													<p>
+													<div class="col-lg-offset-3 col-lg-1">
+														<strong>ID:</strong>
+													</div>
+													<div class="col-lg-5">&nbsp&nbsp&nbsp{{customerFullInf.id}}</div>
+													</br>
+													<div class="col-lg-offset-3 col-lg-1">
+														<strong>Name:</strong>
+													</div>
+													<div class="col-lg-offset-1 col-lg-3">
+														<input type="text" class="form-control"
+															ng-model="customerFullInf.custName"
+															placeholder="{{customerFullInf.custname}}" id="name" required
+															data-validation-required-message="Please enter the company's' name.">
+													</div>
+													</br>
+													</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default btn-success"
+														ng-click="updateCustomer(customerFullInf)" data-dismiss="modal">Approve</button>
+													<button type="button" class="btn btn-default btn-danger"
+														data-dismiss="modal">Close</button>
+												</div>
+											</div>
+										</div>
+									</div>
             </div>
         </div>
 </body>
