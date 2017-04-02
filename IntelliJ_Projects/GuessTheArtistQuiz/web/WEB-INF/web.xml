@@ -18,6 +18,6 @@
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>GuessTheArtist.html</welcome-file>
+		<welcome-file>GuessTheArtist01.html</welcome-file>
 	</welcome-file-list>
 </web-app> 
