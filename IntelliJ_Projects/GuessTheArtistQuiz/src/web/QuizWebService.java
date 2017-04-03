@@ -123,4 +123,20 @@ public class QuizWebService {
 		return null;
 	}
 
+	@Path("getFirstSong01")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public JavaRoundBean getFirstSong01() throws MalformedURLException, IOException, JSONException {
+		HttpSession session = req.getSession(true);
+			if (!session.equals(null)) {
+				QuizListCreator qc = new QuizListCreator();
+				JavaRoundBean round = qc.RoundCreator(qc.artistRandomChooser());
+				round.setRoundScore(50);
+				return round;
+			} else {
+				res.sendError(505);
+			}
+		return null;
+	}
+
 }

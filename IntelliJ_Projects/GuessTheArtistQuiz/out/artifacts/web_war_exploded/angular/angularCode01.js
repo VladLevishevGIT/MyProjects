@@ -1,9 +1,9 @@
-var quizMainApp = angular.model("QuizApp", [])
+var quizMainApp = angular.module("QuizApp", [])
 
 quizMainApp.controller("QuizAppCtrl", function ($http, $scope) {
-    $http.get('rest/quizWebService/getFirstSong').
+    $http.get('rest/quizWebService/getFirstSong01').
     then(function(response) {
-        alert("TEST")
         $scope.round = response.data
+        alert($scope.round)
     });
 })
