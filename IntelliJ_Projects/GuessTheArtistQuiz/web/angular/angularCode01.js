@@ -6,4 +6,9 @@ quizMainApp.controller("QuizAppCtrl", function ($http, $scope) {
         $scope.round = response.data;
     });
 
+    $scope.testFunction = function () {
+        var test = $scope.round;
+        alert(JSON.stringify(test));
+    }
+
 })

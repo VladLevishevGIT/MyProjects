@@ -23,5 +23,6 @@
     <orderEntry type="library" name="org.json" level="project" />
     <orderEntry type="library" name="javax.ws.rs" level="project" />
     <orderEntry type="library" name="javax.servlet" level="project" />
+    <orderEntry type="library" name="jersey-server-1.9.1" level="project" />
   </component>
 </module>
