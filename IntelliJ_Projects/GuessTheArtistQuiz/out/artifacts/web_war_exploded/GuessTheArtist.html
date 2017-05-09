@@ -24,23 +24,20 @@
 							<strong>Failed!</strong> {{errorTextAlert}}
 							<button class="btn btn-danger" ng-click="nextRound()" ng-show="showNextRoundButton">Next Round</button>
 					</div>
-                <div class="alert alert-danger text-center">
-                    <button class="btn btn-danger" ng-click="testFunction()">TEST</button>
-                </div>
                 <div class="input-group">
                     <div style="height:50px"></div>
                     <div class="text-danger"><h3>Round {{round.roundNumber}}</h3></div>
-                    <div><strong>Score: {{round.roundScore}}</strong></div>
-                    <div><strong>Total Score: {{round.totalScore}}</strong></div>
-                     <div><strong>Answer: {{round.artistName}}</strong></div>
+                    <div><strong>Score: {{returnedRound.roundScore}}</strong></div>
+                    <div><strong>Total Score: {{returnedRound.totalScore}}</strong></div>
+                     <div><strong>Answer: {{returnedRound.artistName}}</strong></div>
                     <div class="row">
                         <button type="button" class="btn btn-lg btn-default">1</button>
-                        <input type="text" name="song01" value="{{round.firstSong}}" class="input input-lg" placeholder="song01" />
+                        <input type="text" name="song01" value="{{firstSong}}" class="input input-lg" placeholder="song01" />
                     </div>
                     <div style="height:50px"></div>
                     <div class="row">
                         <button type="button" class="btn btn-lg btn-default">2</button>
-                        <input type="text" name="song02" value="{{round.secondSong}}" class="input-lg" placeholder="song02"/>
+                        <input type="text" name="song02" value="{{secondSong}}" class="input-lg" placeholder="song02"/>
                         <input type="text" name="answer" value="" class="input-lg" placeholder="answer" ng-model="inputValue"/>
                         <button class="btn btn-success" ng-click="getOneMoreSong(inputValue)" ng-hide="hideNextSongButton">Next Song</button>
                         
@@ -48,13 +45,14 @@
                         <div style="height:50px"></div>
                     <div class="row">
                         <button type="button" class="btn btn-lg btn-default">3</button>
-                        <input type="text" name="song03" value="{{round.thirdSong}}" class="input-lg" placeholder="song03"/>
+                        <input type="text" name="song03" value="{{thirdSong}}" class="input-lg" placeholder="song03"/>
                         <img src="#" alt="Alternate Text" class="img-rounded" />
                     </div>
                         <div style="height:50px"></div>
                     </div>
                     <!-- Trigger the modal with a button -->
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                <div>{{test.artistName}}</div>
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog" ng-show="showFinalPanel">
