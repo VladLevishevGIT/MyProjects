@@ -131,7 +131,6 @@ public class QuizWebService {
 			if (!session.equals(null)) {
 				QuizListCreator qc = new QuizListCreator();
 				JavaRoundBean round = qc.RoundCreator(qc.artistRandomChooser());
-				round.setRoundScore(50);
 				return round;
 			} else {
 				res.sendError(505);
