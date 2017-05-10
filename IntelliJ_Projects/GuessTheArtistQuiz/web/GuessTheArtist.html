@@ -18,44 +18,55 @@
                 <div ng-hide="qiuzMainPanel">
                     <div class="text-center"><h1>Guess the artist!</h1></div>
                         <div class="alert alert-success text-center" ng-show="showSuccessAlert">
-                                <strong>Done!</strong> {{successTextAlert}}
-                                <button class="btn btn-danger" ng-click="nextRound()" ng-show="showNextRoundButton">Next Round</button>
+                                <h3><strong>Correct! <!--{{successTextAlert}}--></strong></h3>
+                                <button class="btn btn-success btn-sm" ng-click="nextRound()" ng-show="showNextRoundButton">Next Round</button>
                         </div>
                         <div class="alert alert-danger text-center" ng-show="showErrorAlert">
-                                <strong>Failed!</strong> {{errorTextAlert}}
+                                <h3><strong>You lost this round!  <!--{{errorTextAlert}}--></strong></h3>
                                 <button class="btn btn-danger" ng-click="nextRound()" ng-show="showNextRoundButton">Next Round</button>
                         </div>
-                    <div class="input-group">
+                    <div>
                         <div style="height:50px"></div>
-                        <div class="text-danger"><h3>Round {{roundNumber}}</h3></div>
-                        <div><strong>Score: {{roundScore}}</strong></div>
-                        <div><strong>Total Score: {{totalScore}}</strong></div>
-                         <div><strong>Answer: {{artistName}}</strong></div>
-                        <div class="row">
-                            <button type="button" class="btn btn-lg btn-default">1</button>
-                            <input type="text" name="song01" value="{{firstSong}}" class="input input-lg" placeholder="song01" />
+                        <div class="form-inline">
+                            <div class = "input-group input-group-lg col-lg-6">
+                                <span class = "input-group-addon">1</span>
+                                <input type = "text" class = "form-control" name="song01" value="{{firstSong}}" placeholder ="song01">
+                            </div>
                         </div>
                         <div style="height:50px"></div>
-                        <div class="row">
-                            <button type="button" class="btn btn-lg btn-default">2</button>
-                            <input type="text" name="song02" value="{{secondSong}}" class="input-lg" placeholder="song02"/>
-                            <input type="text" id="answer" name="answer" value="" class="input-lg" placeholder="answer" ng-model="inputValue"/>
-                            <button class="btn btn-success" ng-click="getOneMoreSong(inputValue)" ng-hide="hideNextSongButton">Next Song</button>
+                        <div class="form-inline">
+                            <div class = "input-group input-group-lg col-lg-6">
+                                <span class = "input-group-addon">2</span>
+                                <input type = "text" class = "form-control" name="song02" value="{{secondSong}}" placeholder ="song02">
+                            </div>
+                            <div class="col-lg-4 pull-right">
+                                <div class = "input-group">
+                                    <input id="answer" name="answer" value="" type = "text" class = "form-control input-lg" placeholder="answer" ng-model="inputValue">
+                                    <span class = "input-group-btn">
+                                         <button class = "btn btn-success btn-lg" type = "button" ng-click="getOneMoreSong(inputValue)" ng-hide="hideNextSongButton">
+                                            Go!
+                                         </button>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                             <div style="height:50px"></div>
-                        <div class="row">
-                            <button type="button" class="btn btn-lg btn-default">3</button>
-                            <input type="text" name="song03" value="{{thirdSong}}" class="input-lg" placeholder="song03"/>
-                            <img src="#" alt="Alternate Text" class="img-rounded" />
-                        </div>
-                            <div style="height:50px"></div>
-                        </div>
-                </div>
-                    <div ng-show="qiuzMainPanel">
-                        <h4>TOTAL SCORE: {{totalScore}}</h4>
-                        <button class="btn btn-danger" ng-click="backLinkClick()">New Game</button>
-                    </div>
-            </div>
-        </div>
-</body>
-</html>
+                        <div class="form-inline">
+                             <div class = "input-group input-group-lg col-lg-6">
+                                 <span class = "input-group-addon">3</span>
+                                 <input type = "text" class = "form-control" name="song03" value="{{thirdSong}}" placeholder ="song03">
+                             </div>
+                             <img src="#" alt="Alternate Text" class="img-rounded" />
+                         </div>
+                             <div style="height:50px"></div>
+                         </div>
+                 </div>
+                     <div ng-show="qiuzMainPanel" class="text-center">
+                         <h4>TOTAL SCORE: {{totalScore}}</h4>
+                         <button class="btn btn-danger" ng-click="backLinkClick()">New Game</button>
+                     </div>
+                Hint: {{artistName}}
+             </div>
+         </div>
+ </body>
+ </html>
