@@ -17,6 +17,7 @@
             <div class="panel-body" ng-controller="QuizAppCtrl">
                 <div ng-hide="qiuzMainPanel">
                     <div class="text-center"><h1>Guess the artist!</h1></div>
+                    <div class="text-center"><h4>Round: {{roundNumber}}</h4></div>
                         <div class="alert alert-success text-center" ng-show="showSuccessAlert">
                                 <h3><strong>Correct! <!--{{successTextAlert}}--></strong></h3>
                                 <button class="btn btn-success btn-sm" ng-click="nextRound()" ng-show="showNextRoundButton">Next Round</button>
@@ -56,7 +57,9 @@
                                  <span class = "input-group-addon">3</span>
                                  <input type = "text" class = "form-control" name="song03" value="{{thirdSong}}" placeholder ="song03">
                              </div>
-                             <img src="#" alt="Alternate Text" class="img-rounded" />
+                            <div>
+                                <img src="{{imageURL}}" class="img-rounded" />
+                            </div>
                          </div>
                              <div style="height:50px"></div>
                          </div>

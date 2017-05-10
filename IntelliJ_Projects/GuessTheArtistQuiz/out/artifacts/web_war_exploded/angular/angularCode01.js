@@ -33,6 +33,7 @@ quizMainApp.controller("QuizAppCtrl", function ($http, $scope) {
                 $scope.firstSong = $scope.returnedRound.firstSong;
                 $scope.secondSong = $scope.returnedRound.secondSong;
                 $scope.thirdSong = $scope.returnedRound.thirdSong;
+                $scope.imageURL = $scope.returnedRound.imageURL;
                 $scope.secondSongCount = false;
                 $scope.roundScore = 20;
             } else {
@@ -57,6 +58,7 @@ quizMainApp.controller("QuizAppCtrl", function ($http, $scope) {
             $scope.secondSong = null;
             $scope.thirdSong = null;
             $scope.inputValue = "";
+            $scope.imageURL = null;
             $scope.firstSongCount = true;
             $scope.secondSongCount = true;
             $scope.totalScore = $scope.roundScore + $scope.totalScore;

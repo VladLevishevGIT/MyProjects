@@ -9,6 +9,7 @@ public class JavaRoundBean {
 	private String firstSong;
 	private String secondSong;
 	private String thirdSong;
+	private String imageURL;
 	private int roundScore;
 	private int totalScore;
 	private int roundNumber;
@@ -69,4 +70,11 @@ public class JavaRoundBean {
 		this.roundNumber = roundNumber;
 	}
 
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
 }

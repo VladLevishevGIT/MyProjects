@@ -24,9 +24,14 @@ public class QuizListCreator {
 		return URL;
 	}
 
-	public String songRandomChooser(JSONObject jo) throws JSONException {
-		String song = jo.getJSONArray("results").getJSONObject((int) (Math.random() * 9)).getString("trackName");
-		return song;
+	public ArrayList songRandomChooser(JSONObject jo) throws JSONException {
+		int randomNum = (int) (Math.random() * 9);
+		String song = jo.getJSONArray("results").getJSONObject(randomNum).getString("trackName");
+		String imageURL = jo.getJSONArray("results").getJSONObject(randomNum).getString("artworkUrl100");
+		ArrayList songParams = new ArrayList();
+		songParams.add(song);
+		songParams.add(imageURL);
+		return songParams;
 	}
 
 	public JavaRoundBean RoundCreator(String URL) throws MalformedURLException, IOException, JSONException {
@@ -35,14 +40,18 @@ public class QuizListCreator {
 		JSONObject JSONsongs = jr.readJsonFromURL(URL);
 
 		String artist = JSONsongs.getJSONArray("results").getJSONObject(0).getString("artistName");
-		String firstSong = songRandomChooser(JSONsongs);
-		String secondSong = songRandomChooser(JSONsongs);
+		String firstSong = (String) songRandomChooser(JSONsongs).get(0);
+		String secondSong = (String) songRandomChooser(JSONsongs).get(0);
 		if (firstSong.equals(secondSong)) {
-			secondSong = songRandomChooser(JSONsongs);
+			secondSong = (String) songRandomChooser(JSONsongs).get(0);
 		}
-		String thirdSong = songRandomChooser(JSONsongs);
+		ArrayList songParams = songRandomChooser(JSONsongs);
+		String thirdSong = (String) songParams.get(0);
+		String imageURL = (String) songParams.get(1);
 		if (firstSong.equals(thirdSong) || (secondSong.equals(thirdSong))) {
-			thirdSong = songRandomChooser(JSONsongs);
+			songParams = songRandomChooser(JSONsongs);
+			thirdSong = (String) songParams.get(0);
+			imageURL = (String) songParams.get(1);
 		}
 
 		JavaRoundBean round = new JavaRoundBean();
@@ -51,6 +60,7 @@ public class QuizListCreator {
 		round.setFirstSong(firstSong);
 		round.setSecondSong(secondSong);
 		round.setThirdSong(thirdSong);
+		round.setImageURL(imageURL);
 
 		/*
 		 * round.setArtistName("artist"); round.setFirstSong("firstSong");
