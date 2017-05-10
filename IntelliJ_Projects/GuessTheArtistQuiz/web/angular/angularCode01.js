@@ -68,4 +68,8 @@ quizMainApp.controller("QuizAppCtrl", function ($http, $scope) {
                 $scope.artistName = $scope.returnedRound.artistName;
             });
     }
+
+    $scope.backLinkClick = function () {
+        window.location.reload(false);
+    };
 })
