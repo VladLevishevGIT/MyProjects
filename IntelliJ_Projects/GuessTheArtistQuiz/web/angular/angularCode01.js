@@ -56,7 +56,7 @@ quizMainApp.controller("QuizAppCtrl", function ($http, $scope) {
             $scope.hideNextSongButton = false;
             $scope.secondSong = null;
             $scope.thirdSong = null;
-            $scope.answer = null;
+            $scope.inputValue = "";
             $scope.firstSongCount = true;
             $scope.secondSongCount = true;
             $scope.totalScore = $scope.roundScore + $scope.totalScore;
