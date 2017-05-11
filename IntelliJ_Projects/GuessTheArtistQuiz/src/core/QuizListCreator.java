@@ -64,7 +64,7 @@ public class QuizListCreator {
 
 		/*
 		 * round.setArtistName("artist"); round.setFirstSong("firstSong");
-		 * round.setSecondSong("secondSong"); round.setThirdSong("thirdSong");
+		 * round.setSecondSong("secondSong"); round.setThirdSong("thirdSong"); round.setImageURL("imageURL");
 		 */
 
 		return round;
